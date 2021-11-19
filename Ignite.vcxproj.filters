@@ -25,6 +25,54 @@
     <Filter Include="Source Files\User Interface\input">
       <UniqueIdentifier>{7f004ba6-d11c-4899-bc78-55eb2609019b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Render Engine">
+      <UniqueIdentifier>{537006c9-8cc0-417a-874c-a01608c0adf3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Render Engine">
+      <UniqueIdentifier>{0c5171bc-2b1b-4789-a1dd-ae11e16cda26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Render Engine\opengl">
+      <UniqueIdentifier>{c0bf5e54-64a0-45ca-9d54-0b0869fdb9b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Render Engine\opengl\core">
+      <UniqueIdentifier>{d77abbb8-fab1-47db-91e3-3cdf9e0ebcea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Render Engine\opengl">
+      <UniqueIdentifier>{c3868c49-5d33-4d4b-a217-587b23f13902}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Render Engine\opengl\data_struct">
+      <UniqueIdentifier>{a0eb2df0-94c9-404d-aca2-a62b52494e5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scene">
+      <UniqueIdentifier>{ca504600-939c-42d9-8db5-1f898080a3a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scene\model">
+      <UniqueIdentifier>{14bc29e3-8477-4ab6-96b1-ba11cc389941}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scene\importer">
+      <UniqueIdentifier>{b4d3e477-13ea-4d88-9193-20672905361a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Scene">
+      <UniqueIdentifier>{dca2018b-042c-404e-bb9e-69e5bc1b41e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\System">
+      <UniqueIdentifier>{2b3f9976-f21f-40f6-96f0-92c8734926b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\System\utils">
+      <UniqueIdentifier>{80b292d7-fcb8-41b7-a4f6-6446c6b1b028}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\System\utils\data_types">
+      <UniqueIdentifier>{56fd1ba9-8881-40fa-85c4-d69c8d4beb4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\System">
+      <UniqueIdentifier>{feb6fb62-af69-4d85-9caa-fc86a816275c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\System\utils">
+      <UniqueIdentifier>{f39ada46-17b0-42da-92c2-1d9cf96cca65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\System\debug">
+      <UniqueIdentifier>{7e909740-c316-4a49-ac49-7d401e74542c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -45,6 +93,33 @@
     <ClCompile Include="Keyboard.cpp">
       <Filter>Source Files\User Interface\input</Filter>
     </ClCompile>
+    <ClCompile Include="Initializer.cpp">
+      <Filter>Source Files\Render Engine\opengl\core</Filter>
+    </ClCompile>
+    <ClCompile Include="VAOLoader.cpp">
+      <Filter>Source Files\Render Engine\opengl\data_struct</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelLoader.cpp">
+      <Filter>Source Files\Scene\importer</Filter>
+    </ClCompile>
+    <ClCompile Include="Node.cpp">
+      <Filter>Source Files\Scene\model</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>Source Files\Scene\model</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericTypes.cpp">
+      <Filter>Source Files\System\utils\data_types</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>Source Files\System\debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Light.cpp">
+      <Filter>Source Files\Scene\model</Filter>
+    </ClCompile>
+    <ClCompile Include="Transform.cpp">
+      <Filter>Source Files\Scene\model</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gui.h">
@@ -52,6 +127,24 @@
     </ClInclude>
     <ClInclude Include="input.h">
       <Filter>Header Files\User Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="core.h">
+      <Filter>Header Files\Render Engine\opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="data_struct.h">
+      <Filter>Header Files\Render Engine\opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="importer.h">
+      <Filter>Header Files\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="model.h">
+      <Filter>Header Files\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="data_types.h">
+      <Filter>Header Files\System\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="debug.h">
+      <Filter>Header Files\System</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

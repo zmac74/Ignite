@@ -24,4 +24,7 @@ namespace input
 	public:
 		void update(UINT uMsg, WPARAM wParam);
 	};
+
+	Mouse* getMouse();
+	Keyboard* getKeyboard();
 }

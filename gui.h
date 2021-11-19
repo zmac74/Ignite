@@ -9,11 +9,21 @@ namespace gui
 	{
 	public:
 		FrameBuffer(int width, int height);
+		
+		PIXELFORMATDESCRIPTOR getPixelFormatDescriptor();
+		int getWidth();
+		int getHeight();
+		int getPixelAmount();
+		double getAspectRatio();
 
 	private:
 		int width, height;
 		int length;
 		double aspectRatio;
+
+		PIXELFORMATDESCRIPTOR pfd = PIXELFORMATDESCRIPTOR{};
+
+		void initPFD();
 	};
 	
 	struct WindowSettings 
@@ -42,6 +52,7 @@ namespace gui
 		void setTitle(const char* title);
 		bool exists();
 
+		FrameBuffer getFrameBuffer();
 		int getXPos();
 		int getYPos();
 		int getWidth();
@@ -61,6 +72,10 @@ namespace gui
 
 		RECT windowRect = RECT{};
 		RECT clientRect = RECT{};
+
+		FrameBuffer frameBuffer = FrameBuffer(0, 0);//fix later
+		HDC dc = NULL;
+		HGLRC rc = NULL;
 
 		void createWindowClass();
 		static std::wstring toWideTitle(std::string title);

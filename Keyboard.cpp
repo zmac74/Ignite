@@ -6,9 +6,8 @@ using namespace input;
 
 void Keyboard::update(UINT uMsg, WPARAM wParam)
 {
-	switch (wParam)
-	{
-		case 'W':
-			//if (uMsg == VM_KEYDOWN);
-	}
+	//switch (wParam)
+	//{
+		
+	//}
 }

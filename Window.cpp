@@ -49,6 +49,16 @@ void Window::create()
 
 	ShowWindow(hwnd, SW_SHOW);
 	update();
+
+	// rework/improve later
+	frameBuffer = FrameBuffer(ws.width, ws.height);
+
+	PIXELFORMATDESCRIPTOR pfd = frameBuffer.getPixelFormatDescriptor();
+	dc = GetDC(hwnd);
+	int pFormat = ChoosePixelFormat(dc, &pfd);
+	SetPixelFormat(dc, pFormat, &pfd);
+	rc = wglCreateContext(dc);
+	wglMakeCurrent(dc, rc);
 }
 
 void Window::update() 
@@ -65,7 +75,7 @@ void Window::update()
 
 void Window::render() 
 {
-	
+	SwapBuffers(dc);
 }
 
 bool Window::exists() 
@@ -88,6 +98,8 @@ void Window::destroy()
 {
 	DestroyWindow(hwnd);
 }
+
+FrameBuffer Window::getFrameBuffer() { return frameBuffer; }
 
 int Window::getXPos() { return windowRect.left; }
 

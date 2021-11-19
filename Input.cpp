@@ -14,3 +14,13 @@ LRESULT CALLBACK input::windowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM l
 
 	return DefWindowProc(hwnd, uMsg, wParam, lParam);
 }
+
+Mouse* input::getMouse()
+{
+	return &mouse;
+}
+
+Keyboard* input::getKeyboard()
+{
+	return &keyboard;
+}
