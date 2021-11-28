@@ -73,6 +73,9 @@
     <Filter Include="Source Files\System\debug">
       <UniqueIdentifier>{7e909740-c316-4a49-ac49-7d401e74542c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Render Engine\opengl\renderer">
+      <UniqueIdentifier>{03d9bc30-c9f5-4e8e-a0a7-1641ad92c01a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -120,6 +123,18 @@
     <ClCompile Include="Transform.cpp">
       <Filter>Source Files\Scene\model</Filter>
     </ClCompile>
+    <ClCompile Include="ShaderParser.cpp">
+      <Filter>Source Files\Render Engine\opengl\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderLoader.cpp">
+      <Filter>Source Files\Render Engine\opengl\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderProgram.cpp">
+      <Filter>Source Files\Render Engine\opengl\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>Source Files\Render Engine\opengl\renderer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gui.h">
@@ -146,5 +161,16 @@
     <ClInclude Include="debug.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
+    <ClInclude Include="renderer.h">
+      <Filter>Header Files\Render Engine\opengl</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="VertexShader.shader">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="FragmentShader.shader">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

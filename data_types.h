@@ -8,6 +8,8 @@ namespace utils
 	{
 	public:
 		glm::mat4 matrix;
+
+		float* getValuePtr();
 	};
 
 	struct Matrix3x3

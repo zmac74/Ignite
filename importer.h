@@ -7,16 +7,16 @@
 namespace importer 
 {
 	//FIX: need to pass model and mesh by pointer
-	void loadModel(const char* filepath);
+	model::Mesh loadModel(const char* filepath);
 
 	void processNode(model::Model model, const aiScene* scene);
 
-	void processMesh(model::Model model, const aiScene* scene, int index);
+	void processMesh(model::Mesh& mesh, const aiScene* scene, int index);
 
-	void processPositions(model::Mesh mesh, const aiMesh* aimesh);
-	void processTextureCoords(model::Mesh mesh, const aiMesh* aimesh);
-	void processNormals(model::Mesh mesh, const aiMesh* aimesh);
-	void processColors(model::Mesh mesh, const aiMesh* aimesh);
+	void processPositions(model::Mesh& mesh, const aiMesh* aimesh);
+	void processTextureCoords(model::Mesh& mesh, const aiMesh* aimesh);
+	void processNormals(model::Mesh& mesh, const aiMesh* aimesh);
+	void processColors(model::Mesh& mesh, const aiMesh* aimesh);
 
 	void processLight(model::Model model, const aiScene* scene);
 

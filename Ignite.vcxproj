@@ -154,6 +154,10 @@
     <ClCompile Include="ModelLoader.cpp" />
     <ClCompile Include="Mouse.cpp" />
     <ClCompile Include="Node.cpp" />
+    <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="ShaderLoader.cpp" />
+    <ClCompile Include="ShaderParser.cpp" />
+    <ClCompile Include="ShaderProgram.cpp" />
     <ClCompile Include="Transform.cpp" />
     <ClCompile Include="VAOLoader.cpp" />
     <ClCompile Include="Window.cpp" />
@@ -167,6 +171,11 @@
     <ClInclude Include="importer.h" />
     <ClInclude Include="input.h" />
     <ClInclude Include="model.h" />
+    <ClInclude Include="renderer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FragmentShader.shader" />
+    <None Include="VertexShader.shader" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -2,7 +2,7 @@
 
 using namespace model;
 
-Node::Node(Node* parent, const char* name, Transform transform, ObjectType type) 
+Node::Node(Node* parent, const char* name, Transform transform, NodeType type)
 {
 	this->parent = parent;
 	this->name = name;
@@ -10,7 +10,18 @@ Node::Node(Node* parent, const char* name, Transform transform, ObjectType type)
 	this->type = type;
 }
 
-ObjectType Node::getType() 
+void Node::addChild(Node* child)
+{
+	children.push_back(child);
+}
+
+bool Node::isRoot() 
+{
+	if (parent == nullptr) return true;
+	else return false;
+}
+
+NodeType Node::getType()
 {
 	return type;
 }

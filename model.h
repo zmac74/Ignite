@@ -12,11 +12,9 @@ namespace model
 	{
 	public:
 		Matrix4x4 transformation{};
-
-		static Matrix4x4 convertToMatrix();
 	};
 
-	enum class ObjectType
+	enum class NodeType
 	{
 		MESH = 0,
 		LIGHT = 1,
@@ -26,15 +24,17 @@ namespace model
 	struct Node
 	{
 	public:
-		Node(Node* parent, const char* name, Transform transform, ObjectType type);
+		Node(Node* parent, const char* name, Transform transform, NodeType type);
 
-		ObjectType getType();
+		void addChild(Node* child);
+		bool isRoot();
+		NodeType getType();
 
 	private:
 		Node* parent;
 		std::vector<Node*> children = std::vector<Node*>();
 		const char* name;
-		ObjectType type;
+		NodeType type;
 
 		Transform transform;
 	};

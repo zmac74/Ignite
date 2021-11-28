@@ -9,14 +9,17 @@
 
 using namespace importer;
 
-void importer::loadModel(const char* filepath) 
+model::Mesh importer::loadModel(const char* filepath) 
 {
 	model::Model model = model::Model{};
 	
 	Assimp::Importer importer;
 	const aiScene* scene = importer.ReadFile(filepath, aiProcess_Triangulate);
 
-	processNode(model, scene);
+	model::Mesh mesh = model::Mesh{};
+	processMesh(mesh, scene, 0);
+
+	return mesh;
 }
 
 void importer::processNode(model::Model model, const aiScene* scene)
@@ -24,17 +27,18 @@ void importer::processNode(model::Model model, const aiScene* scene)
 	aiNode* node = scene->mRootNode;
 }
 
-void importer::processMesh(model::Model model, const aiScene* scene, int index)
+void importer::processMesh(model::Mesh& mesh, const aiScene* scene, int index)
 {
 	aiMesh** meshes = scene->mMeshes;
 	aiMesh* aimesh = meshes[index];
 
-	model::Mesh mesh = model::Mesh{};
-
 	processPositions(mesh, aimesh);
+	processTextureCoords(mesh, aimesh);
+	processNormals(mesh, aimesh);
+	processColors(mesh, aimesh);
 }
 
-void importer::processPositions(model::Mesh mesh, const aiMesh* aimesh) 
+void importer::processPositions(model::Mesh& mesh, const aiMesh* aimesh)
 {
 	unsigned int vertexAmount = aimesh->mNumVertices;
 	std::vector<float> positions;
@@ -49,7 +53,7 @@ void importer::processPositions(model::Mesh mesh, const aiMesh* aimesh)
 	mesh.vertexArray.position = positions;
 }
 
-void importer::processTextureCoords(model::Mesh mesh, const aiMesh* aimesh)
+void importer::processTextureCoords(model::Mesh& mesh, const aiMesh* aimesh)
 {
 	unsigned int vertexAmount = aimesh->mNumVertices;
 	std::vector<float> textureCoords;
@@ -84,7 +88,7 @@ void importer::processTextureCoords(model::Mesh mesh, const aiMesh* aimesh)
 	mesh.vertexArray.textureCoords = textureCoords;
 }
 
-void importer::processNormals(model::Mesh mesh, const aiMesh* aimesh) 
+void importer::processNormals(model::Mesh& mesh, const aiMesh* aimesh) 
 {
 	unsigned int vertexAmount = aimesh->mNumVertices;
 	std::vector<float> normals;
@@ -99,7 +103,7 @@ void importer::processNormals(model::Mesh mesh, const aiMesh* aimesh)
 	mesh.vertexArray.normals = normals;
 }
 
-void importer::processColors(model::Mesh mesh, const aiMesh* aimesh)
+void importer::processColors(model::Mesh& mesh, const aiMesh* aimesh)
 {
 	unsigned int vertexAmount = aimesh->mNumVertices;
 	std::vector<float> colors;
